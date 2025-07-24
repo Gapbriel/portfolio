@@ -2,6 +2,7 @@
 
 import { Project } from "@/data/projects";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = {
   project: Project;
@@ -10,41 +11,54 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   return (
     <motion.div
-      className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white text-gray-900 dark:bg-zinc-800 dark:text-white"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      style={{
-        background: "var(--background)",
-        color: "var(--foreground)",
-      }}
+      className="bg-[var(--background)] text-[var(--foreground)] border border-neutral-200 dark:border-neutral-700 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row gap-4"
     >
-      <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-      <p className="text-sm text-gray-500 mb-2">
-        {project.company} · {project.role} · {project.period}
-      </p>
-      <p className="text-sm text-gray-700 mb-3">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-2">
-        {project.tech.map((tech) => (
-          <span
-            key={tech}
-            className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs px-2 py-1 rounded"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-      {project.link && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 text-sm underline"
-        >
-          View project →
-        </a>
+      {project.logo && (
+        <div className="min-w-[80px] flex-shrink-0">
+          <Image
+            src={project.logo}
+            alt={`${project.company} logo`}
+            width={80}
+            height={80}
+            className="rounded border border-neutral-300 dark:border-neutral-600"
+          />
+        </div>
       )}
+
+      <div className="flex-1">
+        <h3 className="text-xl font-semibold">{project.title}</h3>
+        <p className="text-sm text-neutral-500 mb-1">
+          {project.company} · {project.role} · {project.period}
+        </p>
+
+        <p className="text-sm mb-3 leading-relaxed">{project.description}</p>
+
+        <div className="flex flex-wrap gap-2 mb-2">
+          {project.tech.map((tech) => (
+            <span
+              key={tech}
+              className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 underline"
+          >
+            Visit project →
+          </a>
+        )}
+      </div>
     </motion.div>
   );
 }
