@@ -1,3 +1,4 @@
+import React from "react";
 import { notFound } from "next/navigation";
 import { challenges } from "@/data/challenges";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import Counter from "@/app/challenges/Counter";
 // ...
 
 // tabla: slug => componente correspondiente
-const challengeComponents: Record<string, JSX.Element> = {
+const challengeComponents: Record<string, React.ReactElement> = {
   counter: <Counter />,
   // 'todo-list': <ToDoList />,
   // 'dark-mode-toggle': <DarkModeToggleChallenge />,
