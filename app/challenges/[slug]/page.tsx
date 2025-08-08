@@ -14,7 +14,12 @@ const challengeComponents: Record<string, JSX.Element> = {
   // 'dark-mode-toggle': <DarkModeToggleChallenge />,
 };
 
-export default function ChallengeDetailPage({ slug }: { slug: string }) {
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function ChallengeDetailPage({ params }: Props) {
+  const { slug } = await params;
   const challenge = challenges.find((c) => c?.slug === slug);
 
   if (!challenge) return notFound();
