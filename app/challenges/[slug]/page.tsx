@@ -7,10 +7,6 @@ import Counter from "@/app/challenges/Counter";
 // import ToDoList from '@/components/challenges/ToDoList'
 // ...
 
-type Props = {
-  params: { slug: string };
-};
-
 // tabla: slug => componente correspondiente
 const challengeComponents: Record<string, JSX.Element> = {
   counter: <Counter />,
@@ -18,12 +14,12 @@ const challengeComponents: Record<string, JSX.Element> = {
   // 'dark-mode-toggle': <DarkModeToggleChallenge />,
 };
 
-export default function ChallengeDetailPage({ params }: Props) {
-  const challenge = challenges.find((c) => c?.slug === params?.slug);
+export default function ChallengeDetailPage({ slug }: { slug: string }) {
+  const challenge = challenges.find((c) => c?.slug === slug);
 
   if (!challenge) return notFound();
 
-  const ChallengeComponent = challengeComponents[params?.slug] || null;
+  const ChallengeComponent = challengeComponents[slug] || null;
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
