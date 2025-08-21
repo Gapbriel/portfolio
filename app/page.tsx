@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
   SiTailwindcss,
   SiFramer,
-  SiVercel
+  SiVercel,
 } from "react-icons/si";
-import { Sparkles, Wand2 } from "lucide-react";
+import { Sparkles, Wand2, Download, FileText } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -64,6 +64,30 @@ export default function HomePage() {
       </p>
 
       <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 mb-12"
+      >
+        <a
+          href="/Gabriel-Panebianco-CV.pdf"
+          download="Gabriel-Panebianco-CV.pdf"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+        >
+          <FileText className="w-5 h-5" />
+          Download CV
+          <Download className="w-4 h-4" />
+        </a>
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-800 dark:text-gray-200 font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+        >
+          View Projects
+          <span className="text-lg">→</span>
+        </Link>
+      </motion.div>
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -76,73 +100,82 @@ export default function HomePage() {
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiNextdotjs className="w-10 h-10 text-black dark:text-white" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Next.js</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Next.js
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiReact className="w-10 h-10 text-[#61DAFB]" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">React</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              React
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiTypescript className="w-10 h-10 text-[#3178C6]" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">TypeScript</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              TypeScript
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiTailwindcss className="w-10 h-10 text-[#06B6D4]" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Tailwind</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Tailwind
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiFramer className="w-10 h-10 text-[#0055FF] dark:text-[#4D94FF]" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Framer</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Framer
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <SiVercel className="w-10 h-10 text-black dark:text-white" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Vercel</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Vercel
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <Wand2 className="w-10 h-10 text-purple-600 dark:text-purple-400" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Cursor</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Cursor
+            </span>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 transition-all hover:shadow-lg dark:hover:bg-zinc-700"
           >
             <Sparkles className="w-10 h-10 text-orange-500 dark:text-orange-400" />
-            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Claude</span>
+            <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              Claude
+            </span>
           </motion.div>
         </div>
       </motion.div>
-
-      <Link
-        href="/projects"
-        className="inline-block mt-6 text-blue-600 dark:text-blue-400 hover:underline font-medium"
-      >
-        → View my projects
-      </Link>
     </motion.section>
   );
 }
