@@ -2,7 +2,7 @@
 
 import { Project } from "@/data/projects";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import CompanyLogo from "./CompanyLogo";
 
 type Props = {
   project: Project;
@@ -17,17 +17,7 @@ export default function ProjectCard({ project }: Props) {
       transition={{ duration: 0.4 }}
       className="bg-[var(--background)] text-[var(--foreground)] border border-neutral-200 dark:border-neutral-700 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row gap-4"
     >
-      {project.logo && (
-        <div className="min-w-[80px] flex-shrink-0">
-          <Image
-            src={project.logo}
-            alt={`${project.company} logo`}
-            width={80}
-            height={80}
-            className="rounded border border-neutral-300 dark:border-neutral-600"
-          />
-        </div>
-      )}
+      <CompanyLogo company={project.company} logo={project.logo} />
 
       <div className="flex-1">
         <h3 className="text-xl font-semibold">{project.title}</h3>

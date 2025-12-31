@@ -11,9 +11,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "GoFundMe | Classy - Full-Stack Development",
+    role: "Senior Software Engineer",
+    company: "whiteprompt / GoFundMe (Contractor)",
+    period: "Sep 2025 - Jan 2026",
+    description:
+      "Development and maintenance of full-stack applications using Node.js, React, and PostgreSQL. Led complete repository migration from Bitbucket to GitHub, ensuring continuity in development processes. Configuration and optimization of GitHub Actions (YML workflows) for CI/CD automation. Implementation of RESTful APIs and SQL query optimization to improve application performance. Management of monorepo repositories with multiple packages, configuring automated build and publish processes. Administration and maintenance of private npm packages with automated versioning and library publishing.",
+    tech: [
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "Express",
+      "Sequelize ORM",
+      "GitHub Actions",
+      "Docker",
+      "CI/CD",
+      "Jest",
+      "Microservices",
+    ],
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQEAgTLCPVBoyg/company-logo_100_100/B4EZgOWOnTGwAQ-/0/1752587365169/gofundme_logo?e=1769040000&v=beta&t=fKx_HQ8CB2nkLrlk72zGV07GnKS_W_r54ilF-M8Uhrc",
+    link: "https://pro.gofundme.com/",
+  },
+  {
     title: "Sessionboard Platform - UI & Performance",
     role: "Senior Frontend Developer",
-    company: "Whiteprompt / Sessionboard",
+    company: "Whiteprompt / Sessionboard (Contractor)",
     period: "Sep 2021 - Aug 2025",
     description:
       "Developed scalable UI architecture and spearheaded complete redesign of portals and organization-level dashboard with mobile-first approach, achieving ~40% improvement in responsiveness. Reduced page load times by 35% through Google Lighthouse optimization. Integrated Figma's Visual Copilot with Builder.io and Cursor AI for rapid feature delivery. Implemented LaunchDarkly for feature flags and Redux-Saga for state management.",
